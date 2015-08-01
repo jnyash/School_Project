@@ -1,0 +1,23 @@
+﻿body 
+{
+     margin-left:auto; 
+    margin-right:auto;
+}
+
+table#Logintable
+{
+    background-color:#1ee4d2;
+  border: 2px solid black;
+}
+#lblogin
+{
+     padding-left:50%;
+}
+#lbusername{}
+#txtusername{}
+#lbpassword {}
+#txtpassword{}
+#lberrormessage{}
+#auto-style4{}
+#btlogin{}
+

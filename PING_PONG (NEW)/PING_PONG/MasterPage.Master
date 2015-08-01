@@ -1,0 +1,87 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MasterPage.master.cs" Inherits="PING_PONG.MasterPage" %>
+
+<%@ Register Src="~/TESTWebUserControl1.ascx" TagPrefix="uc1" TagName="TESTWebUserControl1" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+
+    <link href="StyleSheet/MasterPageStyleSheet.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <form id="form1" runat="server">
+        <!--HEADER-->
+        <header>
+            <div class="content-wrapper">
+                <div class="float-left">
+                    <p class="site-title">
+                        <a runat="server" href="~/">
+                            <img id="logo" src="image/pingpong.jpg" /></a>
+                    </p>
+                </div>
+            </div>
+        </header>
+                
+        <!--CONTEN T-->
+
+        <asp:TableCell ID="LogginHolder1" Visible="true" runat="server">
+
+            <table class="Logintable" style="border-radius: 5px; border: 2px solid black; width: 300px; height: 36px; background-color: #ffffff; position: fixed;margin-left: -150px; margin-top: -300px; left:53%; top:447px;">
+                <tr>
+                    <td colspan="2">
+                        <p style="text-align: center;">
+                            Login
+                        </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="lbusername">
+                        <asp:Label ID="lbusername" runat="server" Text="User Name : "></asp:Label>
+                    </td>
+                    <td class="txtusername">
+                        <asp:TextBox ID="txtusername" runat="server"></asp:TextBox>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="lbpassword">
+                        <asp:Label ID="lbpassword" runat="server" Text="Password : "></asp:Label>
+                    </td>
+                    <td class="txtpassword">
+                        <asp:TextBox ID="txtpassword" runat="server" TextMode="Password"></asp:TextBox>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="lberrormessage" colspan="2">
+                        <asp:Label ID="lberrormessage" runat="server"></asp:Label>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="auto-style4"></td>
+                    <td class="btlogin">
+                        <asp:Button ID="btlogin" runat="server" OnClick="btlogin_Click1" Text="Log In" />
+                    </td>
+                </tr>
+            </table>
+        </asp:TableCell>
+
+        <asp:TableCell ID="LogginHolder2" Visible="false" runat="server">
+            <uc1:TESTWebUserControl1 runat="server" ID="TESTWebUserControl1" />
+        </asp:TableCell>
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        </asp:ContentPlaceHolder>
+
+        <!--FOOTER-->
+        <footer>
+            <div class="content-wrapper">
+                <div class="float-left">
+                    <p>&copy; <%: DateTime.Now.Year %> - PingPong copywriter </p>
+                </div>
+            </div>
+        </footer>
+    </form>
+</body>
+</html>
